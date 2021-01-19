@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@300&display=swap');
+
+* {
+  box-sizing: border-box; /* when we add any border or padding to an element it won't affect it's width */
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: rgb(83, 212, 173);
+}
+
+h1 {
+  margin: 50px 0 30px 26px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq.active::before {
+  content: '\f2b5';
+  font-family: 'Font Awesome 5 Free';
+  color: rgb(83, 212, 173);
+  font-size: 24rem;
+  position: absolute;
+  opacity: 0.2;
+  top: -150px;
+  left: -130px;
+  z-index: 0;
+}
+
+.faq.active:nth-of-type(even):before {
+  content: '\f2b5';
+  font-family: 'Font Awesome 5 Free';
+  color: rgb(25, 154, 172);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+}
+
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: rgb(49, 49, 49);
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: rgba(83, 212, 173, 0.205);
+}
